@@ -1,0 +1,47 @@
+<section  class="flex items-center justify-center h-screen bg-gray-300">
+  <div class="mr-40">
+    <!-- <h1 class="text-[50px] text-blue-500 font-black">Facebook</h1> -->
+    <img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2012/08/1000px-Facebook.png?auto=format&q=60&fit=max&w=930" class="w-[250px] ">
+    <p class="text-xl font-mono mt-2">
+      Connect with Friends and the world  <br />
+      around you on Facebook
+    </p>
+  </div>
+  <div class="shadow-lg text-center w-96 p-4 rounded-md bg-slate-50">
+    <form class="flex flex-col w-full bg-gray-50 rounded-md border-b-2 pb-8 mb-8">
+      <input
+        type="text"
+        name=""
+        id=""
+        placeholder="Email or Username"
+        class="border rounded-md px-4 py-2 mb-3"
+      />
+      <input
+        type="text"
+        name=""
+        id=""
+        placeholder="password"
+        class="border rounded-md px-4 py-2 mb-3"
+      />
+      <button
+        class="bg-blue-500 text-white px-4 py-2 border rounded-md font-bold text-xl mt-2"
+      >
+        Log In
+      </button>
+    </form>
+
+    <button 
+   routerLink="signup"
+      class="bg-green-500 text-white px-4 py-2 border rounded-md font-bold text-xl"
+    >
+      Create New Account
+    </button>
+  </div>
+
+</section>
+<!-- <div *ngIf="signup">
+<app-register ></app-register>
+</div> -->
+<div>
+<router-outlet></router-outlet>
+</div>
