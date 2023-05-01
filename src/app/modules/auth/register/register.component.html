@@ -9,7 +9,7 @@
       </div>
       <div>
         <button
-        routerLink="/login"
+          routerLink="/login"
           type="button"
           class="hs-dropdown-toggle inline-flex flex-shrink-0 justify-center items-center h-8 w-8 rounded-md text-gray-500 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white transition-all text-sm dark:focus:ring-gray-700 dark:focus:ring-offset-gray-800"
           data-hs-overlay="#hs-basic-modal"
@@ -31,66 +31,169 @@
         </button>
       </div>
     </div>
-    <form class="bg-gray-100 p-4 rounded-sm w-full">
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="register()"
+      class="bg-gray-100 p-4 rounded-sm w-full"
+    >
       <div class="grid grid-cols-2 gap-2 mb-2 w-full">
-        <input
-          type="text"
-          name=""
-          id=""
-          placeholder="First name"
-          class="border rounded-md p-4 bg-gray-100"
-        />
-        <input
-          type="text"
-          name=""
-          id=""
-          placeholder="Last name"
-          class="border rounded-md p-4 bg-gray-100"
-        />
+        <div>
+          <input
+          [ngClass]="{'border-2 solid border-red-500': controls.first_name.errors?.['required'] && controls.first_name.touched}"
+            formControlName="first_name"
+            type="text"
+            name=""
+            id=""
+            
+            placeholder="First name"
+            class="border rounded-md p-4 bg-gray-100 w-[200px] border-gray-300"
+           
+          />
+          <p
+            *ngIf="controls.first_name.errors?.['required'] && controls.first_name.touched"
+            class="text-sm text-red-500 mt-2 text-start"
+            id="hs-inline-input-helper-text"
+          >
+            First Name is required.
+          </p>
+        </div>
+        <div class="">
+          <input
+          [ngClass]="{'border-2 border-red-500': controls.last_name.errors?.['required'] && controls.last_name.touched}"
+            formControlName="last_name"
+            type="text"
+            name=""
+            id=""
+            placeholder="Last name"
+            class="border rounded-md p-4 bg-gray-100 w-[200px]  border-gray-300"
+          />
+          <p
+            *ngIf="controls.last_name.errors?.['required'] && controls.last_name.touched"
+            class="text-sm text-red-500 mt-2"
+            id="hs-inline-input-helper-text"
+          >
+            Last Name is required.
+          </p>
+        </div>
       </div>
       <div class="grid grid-cols-1 mb-2 gap-2">
         <input
+        [ngClass]="{'border-2  border-red-500': controls.email.errors?.['required'] && controls.email.touched}"
+          formControlName="email"
           type="email"
           id=""
           placeholder="Email"
           class="border rounded-md p-4 bg-gray-100"
         />
+        <p
+          *ngIf="controls.email.errors?.['required'] && controls.email.touched"
+          class="text-sm text-red-500 mt-1"
+          id="hs-inline-input-helper-text"
+        >
+          Email is required.
+        </p>
         <input
+        [ngClass]="{'border-2  border-red-500': controls.password.errors?.['required'] && controls.password.touched}"
+          formControlName="password"
           type="password"
           id=""
           placeholder="Password"
           class="border rounded-md p-4 bg-gray-100"
         />
-      </div>
-      <label class="text-lg block">Birthday</label>
-      <div class="grid grid-cols-3 gap-2">
-        <select name="" id="" class="border-2 rounded-md p-2 w-full bg-white">
-          <option value="null" *ngFor="let month of months" [value]="month">{{month}}</option>
-          
-        </select>
-        <select name="" id="" class="border-2 rounded-md p-2 w-full bg-white">
-          <option value="null" *ngFor="let date of dates" [value]="date">{{date}}</option>
-          
-        </select>
-        <select name="" id="" class="border-2 rounded-md p-2 w-full bg-white">
-          <option value="null" *ngFor="let year of years " [value]="year">{{year}}</option>
-          
-        </select>
-      </div>
-      <label for="" class="text-lg block">Gender</label>
-      <div class="grid grid-cols-2 gap-2">
+        <p
+          *ngIf="controls.password.errors?.['required'] && controls.password.touched"
+          class="text-sm text-red-500 mt-1"
+          id="hs-inline-input-helper-text"
+        >
       
-        <div class="flex flex-row items-center border-2 rounded-md p-2 w-full bg-white">
-            <label for="myCheckbox">Male</label>
-            <input type="checkbox" id="" name="myCheckbox" value="checked" class="ml-[120px]">
-            </div>
-            <div class="flex flex-row items-center border-2 rounded-md p-2 w-full bg-white">
-                <label for="myCheckbox">Female</label>
-                <input type="checkbox" id="" name="myCheckbox" value="checked" class="ml-[100px]" >
-                </div>
-        
-        
-
+          password is required.
+        </p>
+      </div>
+      <div class="flex items-baseline gap-1">
+        <label class="text-md block">Birthday</label>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512 "
+          height="14"
+          width="14"
+        >
+          <path
+            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
+          />
+        </svg>
+      </div>
+      <div class="grid grid-cols-3 gap-2">
+        <select
+          name=""
+          id=""
+          class="border-2 rounded-md p-2 w-full bg-white"
+          formControlName="dob"
+        >
+          <option value="" *ngFor="let month of months" [value]="month">
+            {{ month }}
+          </option>
+        </select>
+        <select
+          name=""
+          id=""
+          class="border-2 rounded-md p-2 w-full bg-white"
+          formControlName="dob"
+        >
+          <option value="" *ngFor="let date of dates" [value]="date">
+            {{ date }}
+          </option>
+        </select>
+        <select
+          name=""
+          id=""
+          class="border-2 rounded-md p-2 w-full bg-white"
+          formControlName="dob"
+        >
+          <option value="" *ngFor="let year of years" [value]="year">
+            {{ year }}
+          </option>
+        </select>
+      </div>
+      <div class="flex items-baseline gap-1">
+        <label for="" class="text-md block">Gender</label>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          height="14"
+          width="14"
+        >
+          <path
+            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
+          />
+        </svg>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <div
+          class="flex flex-row items-center border-2 rounded-md p-2 w-full bg-white"
+        >
+          <label for="myCheckbox">Male</label>
+          <input
+            type="checkbox"
+            id=""
+            name="myCheckbox"
+            value="checked"
+            class="ml-[120px]"
+            formControlName="gender"
+          />
+        </div>
+        <div
+          class="flex flex-row items-center border-2 rounded-md p-2 w-full bg-white"
+        >
+          <label for="myCheckbox">Female</label>
+          <input
+            type="checkbox"
+            id=""
+            name="myCheckbox"
+            value="checked"
+            class="ml-[100px]"
+            formControlName="gender"
+          />
+        </div>
       </div>
       <div>
         <p class="mb-3 my-2 text-sm">
@@ -106,6 +209,9 @@
 
       <div class="text-center mb-2">
         <button
+        [disabled]="this.registerForm.invalid"
+        [ngClass]="{'opacity-40 cursor-not-allowed': this.registerForm.invalid}"
+          type="submit"
           class="bg-blue-500 px-12 py-3 border rounded-lg font-semibold text-xl text-white"
         >
           Sign Up
