@@ -39,46 +39,67 @@
       <div class="grid grid-cols-2 gap-2 mb-2 w-full">
         <div>
           <input
-          [ngClass]="{'border-2 solid border-red-500': controls.first_name.errors?.['required'] && controls.first_name.touched}"
+            [ngClass]="{'border-2 solid border-red-500': controls.first_name.errors?.['required'] && controls.first_name.touched}"
             formControlName="first_name"
             type="text"
             name=""
             id=""
-            
             placeholder="First name"
             class="border rounded-md p-4 bg-gray-100 w-[200px] border-gray-300"
-           
           />
           <p
             *ngIf="controls.first_name.errors?.['required'] && controls.first_name.touched"
-            class="text-sm text-red-500 mt-2 text-start"
+            class="text-sm text-red-500 mt-2 text-start flex items-start gap-1"
             id="hs-inline-input-helper-text"
           >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512 "
+              height="16"
+              width="16"
+            >
+              <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
+              />
+            </svg>
+
             First Name is required.
           </p>
         </div>
         <div class="">
           <input
-          [ngClass]="{'border-2 border-red-500': controls.last_name.errors?.['required'] && controls.last_name.touched}"
+            [ngClass]="{'border-2 border-red-500': controls.last_name.errors?.['required'] && controls.last_name.touched}"
             formControlName="last_name"
             type="text"
             name=""
             id=""
             placeholder="Last name"
-            class="border rounded-md p-4 bg-gray-100 w-[200px]  border-gray-300"
+            class="border rounded-md p-4 bg-gray-100 w-[200px] border-gray-300"
           />
           <p
             *ngIf="controls.last_name.errors?.['required'] && controls.last_name.touched"
-            class="text-sm text-red-500 mt-2"
+            class="text-sm text-red-500 mt-2 flex items-start gap-1"
             id="hs-inline-input-helper-text"
           >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512 "
+              height="16"
+              width="16"
+            >
+              <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
+              />
+            </svg>
             Last Name is required.
           </p>
         </div>
       </div>
       <div class="grid grid-cols-1 mb-2 gap-2">
         <input
-        [ngClass]="{'border-2  border-red-500': controls.email.errors?.['required'] && controls.email.touched}"
+          [ngClass]="{'border-2  border-red-500': controls.email.errors?.['required'] && controls.email.touched}"
           formControlName="email"
           type="email"
           id=""
@@ -87,13 +108,24 @@
         />
         <p
           *ngIf="controls.email.errors?.['required'] && controls.email.touched"
-          class="text-sm text-red-500 mt-1"
+          class="text-sm text-red-500 mt-1 flex items-start gap-1"
           id="hs-inline-input-helper-text"
         >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512 "
+            height="16"
+            width="16"
+          >
+            <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
+            />
+          </svg>
           Email is required.
         </p>
         <input
-        [ngClass]="{'border-2  border-red-500': controls.password.errors?.['required'] && controls.password.touched}"
+          [ngClass]="{'border-2  border-red-500': controls.password.errors?.['required'] && controls.password.touched}"
           formControlName="password"
           type="password"
           id=""
@@ -102,10 +134,20 @@
         />
         <p
           *ngIf="controls.password.errors?.['required'] && controls.password.touched"
-          class="text-sm text-red-500 mt-1"
+          class="text-sm text-red-500 mt-1 flex items-start gap-1"
           id="hs-inline-input-helper-text"
         >
-      
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512 "
+            height="16"
+            width="16"
+          >
+            <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
+            />
+          </svg>
           password is required.
         </p>
       </div>
@@ -209,8 +251,10 @@
 
       <div class="text-center mb-2">
         <button
-        [disabled]="this.registerForm.invalid"
-        [ngClass]="{'opacity-40 cursor-not-allowed': this.registerForm.invalid}"
+          [disabled]="this.registerForm.invalid"
+          [ngClass]="{
+            'opacity-40 cursor-not-allowed': this.registerForm.invalid
+          }"
           type="submit"
           class="bg-blue-500 px-12 py-3 border rounded-lg font-semibold text-xl text-white"
         >

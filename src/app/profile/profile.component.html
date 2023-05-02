@@ -1,0 +1,33 @@
+<section class="w-full h-full p-4">
+    <div class="flex flex-col items-start border-gray-300 border-2 bg-white rounded-md ">
+        <div class="w-full h-80 bg-gray-500">
+            <img src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701962261.jpg" alt="cover photo " >
+        </div>
+        <div class=" float-right ml-44 ">
+            <h2 class="text-2xl text-white ">David Santo</h2>
+        </div>
+        
+        <div class="w-40 h-40 rounded-full overflow-hidden flow-root ml-8 align-baseline">
+            <img src="https://i.pinimg.com/736x/14/ac/cf/14accf0ae870b126b5cffdc687d805e7.jpg" alt="Profile Picture" >
+        </div>
+        <nav class="p-4 ml-40 bg-slate-50">
+           
+            <a 
+            routerLink="about" 
+            routerLinkActive="bg-pink-600 text-white transition duration-500 ease-in-out hover:bg-gray-700"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="p-4">About</a>
+            <a routerLink="friends" 
+            routerLinkActive="bg-pink-600 text-white transition duration-500 ease-in-out hover:bg-gray-700" class="p-4">Friends</a>
+            <a 
+            routerLink="photos" 
+            routerLinkActive="bg-pink-600 text-white transition duration-500 ease-in-out hover:bg-gray-700"
+             class="p-4">Photos</a>
+        </nav>
+       
+    
+    </div>
+    <div class="w-[100%] overflow-y-scroll mt-6">
+        <router-outlet></router-outlet>
+    </div>
+</section>

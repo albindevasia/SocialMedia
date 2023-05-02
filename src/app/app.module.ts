@@ -9,20 +9,29 @@ import { RegisterComponent } from './modules/auth/register/register.component';
 import { NavComponent } from './nav/nav.component';
 import { PostsComponent } from './posts/posts.component';
 import { FriendsComponent } from './friends/friends.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AboutComponent } from './about/about.component';
+import { ProfFriendsComponent } from './prof-friends/prof-friends.component';
+import { PhotosComponent } from './photos/photos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavComponent,
-    PostsComponent,
+     PostsComponent,
     FriendsComponent,
+    // PhotosComponent,
+    // ProfFriendsComponent,
+    // AboutComponent,
+    //  ProfileComponent,
   
    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

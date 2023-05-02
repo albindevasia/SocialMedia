@@ -5,11 +5,10 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './modules/auth/register/register.component';
 
 const routes: Routes = [
-  {
-    path:'home',
-    component:HomeComponent
-
-  },
+  // {
+  //   path:'home',
+  //   component:HomeComponent
+  // },
   {
     path:'',
     redirectTo:'login',pathMatch:'full'
@@ -18,6 +17,10 @@ const routes: Routes = [
     path:'login',
     loadChildren:()=>import('./modules/auth/login/login.module') .then(m=>m.LoginModule)
   },
+  {
+    path:'home',
+    loadChildren:()=>import('./nav/nav.module').then(m=>m.NavModule)
+  }
  
 ];
 
