@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NavComponent } from './nav.component';
+import { NavComponent } from '../nav/nav.component';
 import { PostsComponent } from '../posts/posts.component';
 import { ProfileComponent } from '../profile/profile.component';
-import { HomeComponent } from '../home/home.component';
+import { HomeComponent } from './home.component';
 import { AboutComponent } from '../about/about.component';
 import { FriendsComponent } from '../friends/friends.component';
 import { ProfFriendsComponent } from '../prof-friends/prof-friends.component';

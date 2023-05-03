@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   {
     path:'home',
-    loadChildren:()=>import('./nav/nav.module').then(m=>m.NavModule)
+    loadChildren:()=>import('./home/home.module').then(m=>m.HomeModule)
   }
  
 ];

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { NavRoutingModule } from './nav-routing.module';
-import { NavComponent } from './nav.component';
+import { NavRoutingModule } from './home-routing.module';
+import { NavComponent } from '../nav/nav.component';
 import { PostsComponent } from '../posts/posts.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { AboutComponent } from '../about/about.component';
@@ -25,4 +25,4 @@ import { PhotosComponent } from '../photos/photos.component';
     NavRoutingModule
   ]
 })
-export class NavModule { }
+export class HomeModule { }
