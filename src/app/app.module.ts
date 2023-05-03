@@ -12,14 +12,14 @@ import { FriendsComponent } from './friends/friends.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AboutComponent } from './about/about.component';
 import { ProfFriendsComponent } from './prof-friends/prof-friends.component';
-import { PhotosComponent } from './photos/photos.component';
+// import { PhotosComponent } from './photos/photos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavComponent,
-     PostsComponent,
+      // PostsComponent,
     FriendsComponent,
     // PhotosComponent,
     // ProfFriendsComponent,
