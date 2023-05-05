@@ -21,7 +21,7 @@ export class AboutComponent {
     public singleProfile(){
    this.profileApi.getSingle('David').subscribe(res=>{
     this.profile=res;
-console.log(res)
+// console.log(res)
      
    })
 }

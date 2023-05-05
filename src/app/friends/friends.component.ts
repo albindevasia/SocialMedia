@@ -8,16 +8,14 @@ import { ActivatedRoute } from '@angular/router';
  
 })
 export class FriendsComponent {
+ 
   constructor(private readonly profileApi:ProfileService,private readonly route:ActivatedRoute){
    this.singleProfile()
   }
   public profile:any
-   ngOnInit():void{
-  
-   
-  
-   }
-  
+  ngOnInit():void{
+    this.singleProfile()
+  }
    public singleProfile(){
   this.profileApi.getSingle('David').subscribe(res=>{
    this.profile=res;

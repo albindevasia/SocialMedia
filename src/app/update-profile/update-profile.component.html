@@ -5,7 +5,7 @@
     <div class="h-[50px] p-2 flex justify-between">
         <h1 class="font-bold text-xl">Update Profile</h1>
     <button
-    routerLink="/home/profile"
+    routerLink="/home/profile/myprofile"
     type="button"
     class=" hs-dropdown-toggle inline-flex flex-shrink-0 justify-center items-center h-8 w-8 rounded-md text-gray-500 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white transition-all text-sm dark:focus:ring-gray-700 dark:focus:ring-offset-gray-800"
     data-hs-overlay="#hs-basic-modal"
@@ -37,6 +37,7 @@
         formControlName="first_name" 
         type="text"
         id=""
+        [(ngModel)]="profile.first_name"
         placeholder="firstname"
         class="border rounded-md p-4 bg-gray-100"
       />
@@ -64,6 +65,7 @@
         formControlName="last_name"
           type="text"
           id=""
+         [(ngModel)]="profile.last_name"
           placeholder="lastname"
           class="border rounded-md p-4 bg-gray-100"
         />
@@ -91,6 +93,7 @@
         formControlName="username"
           type="text"
           id=""
+          [(ngModel)]="profile.username"
           placeholder="username"
           class="border rounded-md p-4 bg-gray-100"
         />
@@ -116,7 +119,8 @@
         </p> -->
         <textarea placeholder="about"
         formControlName="about"
-        class="border rounded-md p-4 bg-gray-100"></textarea>
+        [(ngModel)]="profile.about"
+        class="border rounded-md p-4 bg-gray-100">{{profile?.about}}</textarea>
       </div>
 
       <div class="text-center mb-2">

@@ -12,9 +12,14 @@ import { NewPostComponent } from '../new-post/new-post.component';
 
 import { ProfilePictureComponent } from '../profile-picture/profile-picture.component';
 import { UpdateProfileComponent } from '../update-profile/update-profile.component';
+import { TimelineComponent } from '../timeline/timeline.component';
+import { LoginGuard } from '../Auth/login.guard';
+import { MycomponentComponent } from '../mycomponent/mycomponent.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent,
+ canActivate:[LoginGuard],
+
   children:[
     {
       path:'',
@@ -28,6 +33,11 @@ const routes: Routes = [
       path:'profile',
       component:ProfileComponent,
       children:[
+    
+        {
+          path:'timeline/:username',
+          component:TimelineComponent
+        },
 
         {
           path:'picture',
@@ -41,9 +51,10 @@ const routes: Routes = [
           path:'about',
           component:AboutComponent
         },
+      
         {
           path:'',
-         redirectTo:'about', pathMatch:'full'
+          redirectTo:'about' ,pathMatch:'full'
         },
         {
           path:'friends',
@@ -52,6 +63,10 @@ const routes: Routes = [
         {
           path:'photos',
           component:PhotosComponent
+        },
+        {
+          path:'myprofile',
+          component:MycomponentComponent
         }
       ]
     },

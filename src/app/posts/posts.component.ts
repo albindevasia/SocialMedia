@@ -18,7 +18,7 @@ export class PostsComponent {
   
    public singleProfile(){
   this.profileApi.getSingle('David').subscribe(res=>{
-    console.log(res)
+    // console.log(res)
     
   })
    }

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './modules/auth/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './modules/auth/register/register.component';
+import { LoginGuard } from './Auth/login.guard';
 
 const routes: Routes = [
   // {
@@ -16,11 +17,12 @@ const routes: Routes = [
   {
     path:'login',
     loadChildren:()=>import('./modules/auth/login/login.module') .then(m=>m.LoginModule),
-    // canActivate:[LoginGuard]
+
   },
   {
     path:'home',
-    loadChildren:()=>import('./home/home.module').then(m=>m.HomeModule)
+    loadChildren:()=>import('./home/home.module').then(m=>m.HomeModule),
+    // canActivate:[LoginGuard]
   }
  
 ];

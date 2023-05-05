@@ -1,7 +1,15 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-
+interface IProfile{
+first_name:string;
+last_name:string;
+username:string;
+email:string;
+birthday:string;
+picture:string;
+about:string
+}
 @Injectable({
     providedIn:'root'
 })
@@ -17,4 +25,9 @@ public setProfilePicture(file:FormData):Observable<any>{
      return this.http.post(`https://api-sales-app.josetovar.dev/profile/picture`,file);
     
      }
+
+public getProfile():Observable<IProfile> {
+ return   this.http.get<IProfile>(`https://api-sales-app.josetovar.dev/profile/`)
+
+}    
 }

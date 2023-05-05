@@ -19,6 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptor } from '../interceptors/token.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { TimelineComponent } from '../timeline/timeline.component';
+import { MycomponentComponent } from '../mycomponent/mycomponent.component';
 
 
 @NgModule({
@@ -30,9 +32,10 @@ import { ToastrModule } from 'ngx-toastr';
   ProfFriendsComponent,
   PhotosComponent,
   NewPostComponent,
-  
+  TimelineComponent,
   ProfilePictureComponent,
-  UpdateProfileComponent
+  UpdateProfileComponent,
+  MycomponentComponent
   ],
   imports: [
     CommonModule,

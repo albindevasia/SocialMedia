@@ -21,6 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ProfilePictureComponent } from './profile-picture/profile-picture.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { TimelineComponent } from './timeline/timeline.component';
+import { MycomponentComponent } from './mycomponent/mycomponent.component';
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     NavComponent,
       // PostsComponent,
     FriendsComponent,
+      // MycomponentComponent,
+      // TimelineComponent,
       // UpdateProfileComponent,
       // ProfilePictureComponent,
       // ChangeProfileComponent,
