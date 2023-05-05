@@ -1,5 +1,6 @@
 import { NgModule, forwardRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {  HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
@@ -15,8 +16,11 @@ import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     LoginRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
+  providers:[
+  ]
 
 })
 export class LoginModule { }

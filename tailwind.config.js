@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage:{
+        "coverp":"url('/assets/coffe.jpeg')"
+      }
+    },
   },
   plugins: [],
 }

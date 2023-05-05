@@ -8,6 +8,10 @@ import { AboutComponent } from '../about/about.component';
 import { FriendsComponent } from '../friends/friends.component';
 import { ProfFriendsComponent } from '../prof-friends/prof-friends.component';
 import { PhotosComponent } from '../photos/photos.component';
+import { NewPostComponent } from '../new-post/new-post.component';
+
+import { ProfilePictureComponent } from '../profile-picture/profile-picture.component';
+import { UpdateProfileComponent } from '../update-profile/update-profile.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent,
@@ -17,9 +21,22 @@ const routes: Routes = [
       component:PostsComponent
     },
     {
+      path: 'newpost',
+      component:NewPostComponent   
+    },
+    {
       path:'profile',
       component:ProfileComponent,
       children:[
+
+        {
+          path:'picture',
+          component:ProfilePictureComponent
+        },
+        {
+          path:'update',
+          component:UpdateProfileComponent
+        },
         {
           path:'about',
           component:AboutComponent

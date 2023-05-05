@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ProfileService } from '../Services/profile.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -6,5 +8,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
-
+  constructor(private readonly profileApi:ProfileService,private readonly route:ActivatedRoute){
+    this.singleProfile()
+   }
+   public profile:any
+    ngOnInit():void{
+   
+     
+   
+    }
+   
+    public singleProfile(){
+   this.profileApi.getSingle('David').subscribe(res=>{
+    this.profile=res;
+console.log(res)
+     
+   })
+}
 }

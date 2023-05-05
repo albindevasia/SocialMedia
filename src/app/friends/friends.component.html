@@ -2,12 +2,12 @@
     <div class="w-12 h-12 overflow-hidden ml-2 rounded-full">
       <img
       routerLink="profile"
-        src="https://i.pinimg.com/736x/14/ac/cf/14accf0ae870b126b5cffdc687d805e7.jpg"
+        src="{{profile?.picture}}"
         class="h-full w-full object-cover"
       />
     </div>
     <div class="">
-      <p class="font-bold -m-1 ml-2">David Santo</p>
+      <p class="font-bold -m-1 ml-2">{{profile?.first_name + ' ' + profile?.last_name}}</p>
     </div>
   </div>
   <div class="flex justify-between p-2">
