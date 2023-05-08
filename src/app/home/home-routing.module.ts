@@ -19,6 +19,7 @@ import { MycomponentComponent } from '../mycomponent/mycomponent.component';
 const routes: Routes = [
   {path:'',component:HomeComponent,
  canActivate:[LoginGuard],
+ canActivateChild:[LoginGuard],
 
   children:[
     {
