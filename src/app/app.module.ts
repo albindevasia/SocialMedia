@@ -23,6 +23,9 @@ import { ProfilePictureComponent } from './profile-picture/profile-picture.compo
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { MycomponentComponent } from './mycomponent/mycomponent.component';
+import { MyphotosComponent } from './myphotos/myphotos.component';
+import { AddfriendsComponent } from './addfriends/addfriends.component';
+import { AcceptComponent } from './accept/accept.component';
 
 
 @NgModule({
@@ -32,6 +35,10 @@ import { MycomponentComponent } from './mycomponent/mycomponent.component';
     NavComponent,
       // PostsComponent,
     FriendsComponent,
+      // MyfriendsprofileComponent,
+      // AcceptComponent,
+      // AddfriendsComponent,
+
       // MycomponentComponent,
       // TimelineComponent,
       // UpdateProfileComponent,

@@ -1,7 +1,7 @@
 <div class="flex items-center bg-gray-400 p-2">
     <div class="w-12 h-12 overflow-hidden ml-2 rounded-full">
       <img
-     routerLink="profile"
+     routerLink="profile/{{profile.username}}"
         src="{{profile?.picture}}"
         class="h-full w-full object-cover"
       />
@@ -28,21 +28,21 @@
     </svg>
   </div>
   <ul>
-    <li class="flex items-center justify-start py-2">
+    <li class="flex items-center justify-start py-2" *ngFor="let fri of friends">
       <div class="w-11 h-11 rounded-full overflow-hidden">
-        <img
-          src="https://images.statusfacebook.com/profile_pictures/stylish-girls/stylish-girls-profile-pictures-123.jpg"
+        <img routerLink="profile/{{fri.username}}"
+          src="https://api-sales-app.josetovar.dev/pictures/{{fri.picture}}"
           class="w-full h-full object-cover"
         />
       </div>
       <div>
-        <p class="font-bold ml-3">Arunima Hess</p>
+        <p class="font-bold ml-3">{{fri.first_name + ' ' + fri.last_name}}</p>
       </div>
       <div class="ml-[150px]">
           <img src="/assets/icons8-green-circle-48.png" class="w-5 h-5 object-cover">
       </div>
     </li>
-    <li class="flex items-center justify-start py-2">
+    <!-- <li class="flex items-center justify-start py-2">
       <div class="w-11 h-11 rounded-full overflow-hidden">
         <img
           src="https://srcwap.com/wp-content/uploads/2017/06/Stylish-Selfie-Dp-for-Girls.jpg"
@@ -55,8 +55,8 @@
       <div class="ml-[190px]">
           <img src="/assets/icons8-green-circle-48.png" class="w-5 h-5 object-cover">
       </div>
-    </li>
-    <li class="flex items-center justify-start py-2">
+    </li> -->
+    <!-- <li class="flex items-center justify-start py-2">
       <div class="w-11 h-11 rounded-full overflow-hidden">
         <img
           src="https://1.bp.blogspot.com/-ZtEitALu6mI/XjfwEKlk6VI/AAAAAAAACVE/AOkE6WDXW0MaAZV8c-bXUJOUGuw2N1BcQCLcBGAsYHQ/s400/_%255B%2BStylish%255D%2BWhatsapp%2BDP%2BImages%2BFor%2BGirl%2B_%2BSad%2B_%2BAttitude%2B_%2BQuotes%2B%25289%2529.jpg"
@@ -69,8 +69,8 @@
       <div class="ml-[190px]">
           <img src="/assets/icons8-green-circle-48.png" class="w-5 h-5 object-cover">
       </div>
-    </li>
-    <li class="flex items-center justify-start py-2">
+    </li> -->
+    <!-- <li class="flex items-center justify-start py-2">
       <div class="w-11 h-11 rounded-full overflow-hidden">
         <img
           src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg"
@@ -83,8 +83,8 @@
       <div class="ml-[180px]">
           <img src="/assets/icons8-green-circle-48.png" class="w-5 h-5 object-cover">
       </div>
-    </li>
-    <li class="flex items-center justify-start py-2">
+    </li> -->
+    <!-- <li class="flex items-center justify-start py-2">
       <div class="w-11 h-11 rounded-full overflow-hidden">
         <img
           src="https://sb.kaleidousercontent.com/67418/1920x1545/c5f15ac173/samuel-raita-ridxdghg7pw-unsplash.jpg"
@@ -97,8 +97,8 @@
       <div class="ml-[150px]">
           <img src="/assets/icons8-green-circle-48.png" class="w-5 h-5 object-cover">
       </div>
-    </li>
-    <li class="flex items-center justify-start py-2">
+    </li> -->
+    <!-- <li class="flex items-center justify-start py-2">
       <div class="w-11 h-11 rounded-full overflow-hidden">
         <img
           src="https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-3763188.jpg&fm=jpg"
@@ -111,8 +111,8 @@
       <div class="ml-[170px]">
           <img src="/assets/icons8-green-circle-48.png" class="w-5 h-5 object-cover">
       </div>
-    </li>
-    <li class="flex items-center justify-start py-2">
+    </li> -->
+    <!-- <li class="flex items-center justify-start py-2">
       <div class="w-11 h-11 rounded-full overflow-hidden">
         <img
           src="https://image.shutterstock.com/mosaic_250/2780032/1667439913/stock-photo-headshot-portrait-of-smiling-millennial-male-employee-talk-on-video-call-or-web-conference-in-1667439913.jpg"
@@ -125,8 +125,8 @@
       <div class="ml-[190px]">
           <img src="/assets/icons8-green-circle-48.png" class="w-5 h-5 object-cover">
       </div>
-    </li>
-    <li class="flex items-center justify-start py-2">
+    </li> -->
+    <!-- <li class="flex items-center justify-start py-2">
       <div class="w-11 h-11 rounded-full overflow-hidden">
         <img
           src="https://media.istockphoto.com/id/1154642632/photo/close-up-portrait-of-brunette-woman.jpg?b=1&s=612x612&w=0&k=20&c=7hgSq1L2mpIbpuuw00KELApMpmZfBkZ-RBxn3Qps5zQ="
@@ -139,8 +139,8 @@
       <div class="ml-[185px]">
           <img src="/assets/icons8-green-circle-48.png" class="w-5 h-5 object-cover">
       </div>
-    </li>
-    <li class="flex items-center justify-start py-2">
+    </li> -->
+    <!-- <li class="flex items-center justify-start py-2">
       <div class="w-11 h-11 rounded-full overflow-hidden">
         <img
           src="https://image.shutterstock.com/mosaic_250/2780032/1194497251/stock-photo-portrait-of-smiling-red-haired-millennial-man-looking-at-camera-sitting-in-caf-or-coffeeshop-1194497251.jpg"
@@ -153,7 +153,7 @@
       <div class="ml-[185px]">
           <img src="/assets/icons8-green-circle-48.png" class="w-5 h-5 object-cover">
       </div>
-    </li>
+    </li> -->
     <li>
       <button class="border-blue-500 bg-slate-400 rounded-full p-4">
         + New Group

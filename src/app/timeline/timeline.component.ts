@@ -12,15 +12,16 @@ constructor(private readonly postService:PostService,private readonly route:Acti
 ngOnInit(){
   this.route.paramMap.subscribe((params)=>{
     const prov=String(params.get('username'))
-    this.post=this.postService.getPosts(prov)
+    this.posts=this.postService.getPosts(prov)
   })
   this.TimeLine();
 }
-public post!:any;
+public posts!:any;
 public TimeLine(){
   this.postService.getPosts('David').subscribe((res:any)=>{
     console.log(res)
-    this.post=res
+    this.posts=res
+    // console.log(this.post)
     //  this.post.picture=`https://api-sales-app.josetovar.dev/pictures/`+ res.picture
   })
 }

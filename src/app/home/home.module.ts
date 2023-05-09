@@ -11,7 +11,7 @@ import { ProfFriendsComponent } from '../prof-friends/prof-friends.component';
 import { PhotosComponent } from '../photos/photos.component';
 import { NewPostComponent } from '../new-post/new-post.component';
 
-import { ProfileService } from '../Services/profile.service';
+// import { ProfileService } from '../Services/profile.service';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { ProfilePictureComponent } from '../profile-picture/profile-picture.component';
 import { UpdateProfileComponent } from '../update-profile/update-profile.component';
@@ -21,6 +21,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { TimelineComponent } from '../timeline/timeline.component';
 import { MycomponentComponent } from '../mycomponent/mycomponent.component';
+import { MyphotosComponent } from '../myphotos/myphotos.component';
+import { AddfriendsComponent } from '../addfriends/addfriends.component';
+import { AcceptComponent } from '../accept/accept.component';
+
 
 
 @NgModule({
@@ -35,7 +39,11 @@ import { MycomponentComponent } from '../mycomponent/mycomponent.component';
   TimelineComponent,
   ProfilePictureComponent,
   UpdateProfileComponent,
-  MycomponentComponent
+  MycomponentComponent,
+  MyphotosComponent,
+  AddfriendsComponent,
+  AcceptComponent,
+
   ],
   imports: [
     CommonModule,

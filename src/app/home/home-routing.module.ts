@@ -15,6 +15,10 @@ import { UpdateProfileComponent } from '../update-profile/update-profile.compone
 import { TimelineComponent } from '../timeline/timeline.component';
 import { LoginGuard } from '../Auth/login.guard';
 import { MycomponentComponent } from '../mycomponent/mycomponent.component';
+import { MyphotosComponent } from '../myphotos/myphotos.component';
+import { AddfriendsComponent } from '../addfriends/addfriends.component';
+import { AcceptComponent } from '../accept/accept.component';
+
 
 const routes: Routes = [
   {path:'',component:HomeComponent,
@@ -31,7 +35,7 @@ const routes: Routes = [
       component:NewPostComponent   
     },
     {
-      path:'profile',
+      path:'profile/:username',
       component:ProfileComponent,
       children:[
     
@@ -63,15 +67,30 @@ const routes: Routes = [
         },
         {
           path:'photos',
-          component:PhotosComponent
+          component:PhotosComponent,
+          children:[
+            {
+              path:'myphoto',
+              component:MyphotosComponent
+            }
+          ]
         },
         {
           path:'myprofile',
           component:MycomponentComponent
+        },
+        {
+          path:'addfriend',
+          component:AddfriendsComponent
         }
-      ]
+ 
+      ],
     },
-  
+  {
+    path:'accept',
+    component:AcceptComponent
+  },
+
   ]
 }
 ];
