@@ -70,7 +70,7 @@ export class PostsComponent {
   });
 
   public commentOnPost(): void {
-     this.commentForm.controls['post_id'].setValue(this.posts.post.post_id)
+    //  this.commentForm.controls['post_id'].setValue(this.posts.post.post_id)
     if (this.commentForm.valid)
       this.commentService
         .commentOnPost(this.commentForm.value)
