@@ -63,7 +63,7 @@ export class PostsComponent {
 
   public commentForm: FormGroup = new FormGroup({
     
-    post_id: new FormControl('',Validators.required)
+    post_id: new FormControl('1',Validators.required)
  , 
 
     content: new FormControl('', Validators.required),
