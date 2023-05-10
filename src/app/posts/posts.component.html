@@ -157,19 +157,25 @@
           />
         </svg>
       </div>
-          <div *ngFor="let comment of p.post.comments " class="flex flex-col p-2 border-2 rounded-md">
-       <div >
+      <div >
+          <div *ngFor="let comment of p.comments " class="flex  justify-start p-2 border-2 rounded-md">
+           
+       <div class="flex">
           <div class="w-12 h-12 overflow-hidden  rounded-full mr-2 ">
-          <img src="{{profile?.picture}}"    class="h-full w-full object-cover ">
+          <img src="https://api-sales-app.josetovar.dev/pictures/{{comment.picture}}"    class="h-full w-full object-cover ">
          
         </div>
-        <div >
-          <h3 >{{p.comments.username}}</h3>
+        <div class="ml-30 ">
+          <h3 class="ml-30">{{comment.username}}</h3>
+      
+     
         </div>
       </div>
-        <p>{{comment.content}}</p>
-      </div>
-         
+    </div>
+    
+    <div *ngFor="let user of p.post.comments">
+      <p>{{user.content}}</p>
+    </div>
         </div>
   </div>
  
