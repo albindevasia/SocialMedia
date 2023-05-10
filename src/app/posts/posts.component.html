@@ -18,19 +18,23 @@
     </div>
   </div>
   <h2 class="text-lg font-bold mb-4 ml-3">Posts</h2>
-  <div class="bg-white rounded-2xl mb-6" *ngFor="let p of posts">
+
+  <div class="bg-white rounded-2xl mb-6" *ngFor="let p of pots">
     <div class="flex justify-between p-2">
-      <div class="flex items-center p-4">
+
+      <div class="flex items-center p-4" >
         <div class="w-12 h-12 rounded-full overflow-hidden ml-3">
           <img
-            src="https://i.pinimg.com/736x/31/44/7e/31447e25b7bc3429f83520350ed13c15.jpg"
+            src="https://api-sales-app.josetovar.dev/pictures/{{p.picture}}"
             alt=""
             class="w-full h-full object-cover"
           />
         </div>
         <div>
-          <p class="font-bold -mb-1">Arifk</p>
-          <p class="text-gray-400">{{p.post.created_at| date}}</p>
+         
+          <p class="font-bold -mb-1">{{p.first_name + ' ' +p.last_name}}</p>
+    
+          <p class="text-gray-400">{{p.post.created_at | date}}</p>
         </div>
       </div>
 
@@ -56,9 +60,7 @@
     </div>
     <div class="p-4">
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-        doloribus eum rem corporis praesentium et consequatur iusto illo
-        nostrum nam!
+       {{p.post.content}}
       </p>
     </div>
     <div class="flex items-center p-4">
@@ -157,7 +159,7 @@
           />
         </svg>
       </div>
-      <div >
+      
           <div *ngFor="let comment of p.comments;let i=index " class="flex p-2 border-2 rounded-md">
            
        <div >
@@ -177,6 +179,5 @@
     </div>
     
     
-        </div>
   </div>
- 
+  </div>

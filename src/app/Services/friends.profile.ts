@@ -24,5 +24,5 @@ export class ApiService {
 public getPosts(username:string):Observable<any>{
     return this.http.get(`${this.postApi}/${username}`)
 }
-  // Add more methods for other API requests as needed
+
 }
