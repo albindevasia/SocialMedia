@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { ProfileService } from '../Services/profile.service'
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PostService } from '../Services/post.service'
 
 @Component({
@@ -12,13 +12,18 @@ import { PostService } from '../Services/post.service'
 })
 export class PhotosComponent {
   profile: any;
-constructor(private readonly http:HttpClient,private readonly postService:PostService,private readonly toastr :ToastrService ,private readonly ProfileApi:ProfileService,private readonly router:Router){}
+  username: any;
+constructor(private readonly http:HttpClient,private readonly postService:PostService,private readonly toastr :ToastrService ,private readonly ProfileApi:ProfileService,private readonly router:Router,private readonly route:ActivatedRoute){}
 ngOnInit():void{
-  this.photoView()
+  this.route.paramMap.subscribe((params)=>{
+    this.username=params.get('username')
+ 
+     this.photoView(this.username)
+    })
  
 }
-  public photoView(){
-    this.postService.getPosts('David').subscribe(res=>{
+  public photoView(username:string){
+    this.postService.getPosts(username).subscribe(res=>{
      this.profile=res;
      
     })

@@ -18,7 +18,7 @@ export class LoginComponent {
     email:new FormControl('',Validators.required),
     password:new FormControl('',Validators.required),
   });
-
+home:any;
 public login(){
   const url='https://api-sales-app.josetovar.dev/auth/login'
   if(this.loginForm.valid){
@@ -30,8 +30,9 @@ public login(){
         JSON.stringify(res.access_token)
       )
       console.log(res)
+
       this.toastr.success('Login Successfully ')
-      this.router.navigate(['/home'])
+      this.router.navigate([''])
 
     }else{
       this.toastr.error('This email and password not exists')

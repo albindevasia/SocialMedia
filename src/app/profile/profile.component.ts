@@ -23,28 +23,29 @@ export class ProfileComponent {
   pro!:IProfile
   pvc:any;
   constructor(private readonly profileApi:ProfileService,private readonly route:ActivatedRoute,private readonly apiservice:ApiService){
-    this.singleProfile()
+ 
   }
   public profile:any
   ngOnInit():void{
     this.route.paramMap.subscribe(params=>{
       this.username=params.get('username');
 this.apiservice.getProfile(this.username).subscribe((profile:any)=>{
+ 
   this.pvc=profile
   this.pvc.picture=`https://api-sales-app.josetovar.dev/pictures/`+ profile.picture
 })
     })
-    this.singleProfile()
+   
   }
   
   
-   public singleProfile(){
-  this.profileApi.getSingle('David').subscribe(res=>{
-   this.profile=res;
-   this.profile.picture=`https://api-sales-app.josetovar.dev/pictures/`+ res.picture
-    // console.log(this.profile.picture)
-  })
-   }
+
  
- 
+ public parmsMap(params:{[source:string]:string}){
+  if(params['username']){
+    this.apiservice.getProfile((params['username'])).subscribe((ptc:any) =>{
+      this.pro=ptc
+    })
+  }
+ }
 }

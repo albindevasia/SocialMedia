@@ -7,20 +7,20 @@ import { LoginGuard } from './Auth/login.guard';
 
 const routes: Routes = [
   // {
-  //   path:'home',
+  //   path:'',
   //   component:HomeComponent
   // },
-  {
-    path:'',
-    redirectTo:'login',pathMatch:'full'
-  },
+  // {
+  //   path:'',
+  //   redirectTo:'login',pathMatch:'full'
+  // },
   {
     path:'login',
     loadChildren:()=>import('./modules/auth/login/login.module') .then(m=>m.LoginModule),
 
   },
   {
-    path:'home',
+    path:'',
     loadChildren:()=>import('./home/home.module').then(m=>m.HomeModule),
     // canActivate:[LoginGuard]
   }

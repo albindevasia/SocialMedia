@@ -39,7 +39,7 @@ export class PostsComponent {
     this.friendsService.viewFriends().subscribe((res:any[])=>{
 
       this.friends=res
-      console.log(res)
+      // console.log(res)
 
       this.friends.forEach(res=>{
         this.postService.getPosts(res.username).subscribe((resp:any[]) => {
@@ -54,7 +54,7 @@ export class PostsComponent {
           // this.pots=this.pots.concat(resp)
           
           // this.concat()
-        console.log(this.pots)
+        // console.log(this.pots)
         //  this.commentForm.controls['post_id'].setValue(resp[0].post.id)
 
         })

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ProfileService } from '../Services/profile.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FriendsService } from '../Services/friends.service';
 import { ApiService } from '../Services/friends.profile';
 
@@ -12,7 +12,7 @@ import { ApiService } from '../Services/friends.profile';
 export class FriendsComponent {
   username: any;
  
-  constructor(private readonly profileApi:ProfileService,private readonly route:ActivatedRoute,private readonly friendsService:FriendsService,private readonly apiservice:ApiService){
+  constructor(private readonly profileApi:ProfileService,private readonly route:ActivatedRoute,private readonly friendsService:FriendsService,private readonly apiservice:ApiService,private readonly router:Router){
    this.singleProfile()
   }
   public friends:any
@@ -34,4 +34,8 @@ export class FriendsComponent {
       this.friends=res
     })
    }
+   getNavigateBy(username:string){
+    this.router.navigate(['home/profile/friends'],{queryParams:{username:username}})
+  
+  }
 }

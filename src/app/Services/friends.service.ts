@@ -37,7 +37,7 @@ public envirment='https://api-sales-app.josetovar.dev'
     );
   }
   public getRequest():Observable<any>{
-return this.http.get(`https://api-sales-app.josetovar.dev/friendships/requests`).pipe(map((res:any)=>res.filter((request:any)=>request.status.accepted)))
+return this.http.get(`https://api-sales-app.josetovar.dev/friendships/requests`).pipe(map((res:any)=>res.filter((request:any)=>request.status !== 'accepted')))
   }
 
   public viewFriends():Observable<any>{

@@ -38,7 +38,7 @@ const routes: Routes = [
       path:'profile/:username',
       component:ProfileComponent,
       children:[
-    
+
         {
           path:'timeline/:username',
           component:TimelineComponent
@@ -53,20 +53,20 @@ const routes: Routes = [
           component:UpdateProfileComponent
         },
         {
-          path:'about',
+          path:'about/:username',
           component:AboutComponent
         },
       
         {
           path:'',
-          redirectTo:'about' ,pathMatch:'full'
+          redirectTo:'myprofile' ,pathMatch:'full'
         },
         {
-          path:'friends',
+          path:'friends/:username',
           component:ProfFriendsComponent
         },
         {
-          path:'photos',
+          path:'photos/:username',
           component:PhotosComponent,
           children:[
             {

@@ -14,12 +14,17 @@ export class ProfFriendsComponent {
   constructor(private readonly profileApi:ProfileService,private readonly route:ActivatedRoute,private readonly friendsService:FriendsService,private readonly apiservice:ApiService){}
   ngOnInit():void{
 
-    this.friendsShow()
+    this.route.paramMap.subscribe((params)=>{
+      this.username=params.get('username')
+   
+       this.friendsShow(this.username)
+      })
   
   }
   friends: any;
-  public friendsShow(){
+  public friendsShow(username:string){
     this.friendsService.viewFriends().subscribe((res:any)=>{
+      // console.log(res)
       this.friends=res
     })
    }

@@ -19,19 +19,18 @@ export class AboutComponent {
     ngOnInit():void{
    
       this.route.paramMap.subscribe(params=>{
-        const prov=String(params.get('username'));
-this.http.get(`https://api-sales-app.josetovar.dev/friendships/${prov}`).subscribe((res)=>{
-  this.pvc=res
-})
-this.singleProfile(prov)
+       this.username=params.get('username');
+
+this.singleProfile(this.username)
+
       })
    
     }
    
     public singleProfile(username:string){
    this.profileApi.getSingle(username).subscribe(res=>{
-    // this.profile=res;
-// console.log(res)
+     this.profile=res;
+//  console.log(res)
      
    })
 }

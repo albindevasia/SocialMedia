@@ -3,13 +3,13 @@
       <div class="flex items-center p-4">
         <div class="w-12 h-12 rounded-full overflow-hidden ml-3">
           <img
-            src="https://i.pinimg.com/736x/31/44/7e/31447e25b7bc3429f83520350ed13c15.jpg"
+            src="https://api-sales-app.josetovar.dev/pictures/{{p.picture}}"
             alt=""
             class="w-full h-full object-cover"
           />
         </div>
         <div>
-          <p class="font-bold -mb-1">David Santo</p>
+          <p class="font-bold -mb-1">{{p.first_name + ' '+p.last_name}}</p>
           <p class="text-gray-400">{{p.post.created_at | date}} </p>
         </div>
       </div>
@@ -28,7 +28,7 @@
       </svg>
     </div>
     <div
-      class="max-h-90 overflow-hidden p-2 border-2 border-b-gray-400 rounded-xl"
+      class="max-h-96 overflow-hidden p-2 border-2 border-b-gray-400 rounded-xl"
     >
       <img
         src="https://api-sales-app.josetovar.dev/pictures/{{p.post.picture}}"

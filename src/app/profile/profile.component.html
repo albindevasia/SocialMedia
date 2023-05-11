@@ -1,9 +1,9 @@
 <section class=" p-4">
-    <div>
-    <div class="flex flex-col items-start border-gray-300 border-2 bg-white rounded-md bg-coverp bg-cover" >
-        <!-- <div class="w-full h-52 bg-gray-500">
+    <div class="bg-gray-200">
+    <div class="flex flex-col items-start border-gray-300 border-2 rounded-md bg-cover bg-blue-300" >
+      <!-- <div class="w-full h-40 bg-gray-500">
             <img src="https://images.unsplash.com/photo-1623627484632-f041d1fb366d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="cover photo " >
-        </div> -->
+        </div>  -->
      
         
         <div class="  ml-8 mt-28 flex flex-col " >
@@ -30,17 +30,17 @@
      
         <div class="p-2 ">
         <nav class="p-4 ml-32 align-center">
-            <a routerLink="timeline/{{profile.username}}" 
+            <a routerLink="timeline/{{pvc?.username}}" 
             routerLinkActive="bg-pink-600 text-white transition duration-500 ease-in-out hover:bg-gray-700" class="p-4">Timeline</a>
             <a 
-            routerLink="about" 
+            routerLink="about/{{pvc.username}}" 
             routerLinkActive="bg-pink-600 text-white transition duration-500 ease-in-out hover:bg-gray-700"
             [routerLinkActiveOptions]="{ exact: true }"
             class="p-4">About</a>
-            <a routerLink="friends" 
+            <a routerLink="friends/{{pvc.username}}" 
             routerLinkActive="bg-pink-600 text-white transition duration-500 ease-in-out hover:bg-gray-700" class="p-4">Friends</a>
             <a 
-            routerLink="photos" 
+            routerLink="photos/{{pvc.username}}" 
             routerLinkActive="bg-pink-600 text-white transition duration-500 ease-in-out hover:bg-gray-700"
              class="p-4">Photos</a>
              <a 
