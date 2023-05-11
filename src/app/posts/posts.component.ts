@@ -34,7 +34,7 @@ export class PostsComponent {
   }
   friends: any[]=[];
   pots:any[]=[]
-  povs:any[]=['1,2,3,4,5']
+
   public friendsShow(){
     this.friendsService.viewFriends().subscribe((res:any[])=>{
 
@@ -55,7 +55,7 @@ export class PostsComponent {
           
           // this.concat()
         console.log(this.pots)
-         this.commentForm.controls['post_id'].setValue(resp[0].post.id)
+        //  this.commentForm.controls['post_id'].setValue(resp[0].post.id)
 
         })
        
@@ -106,8 +106,8 @@ export class PostsComponent {
     content: new FormControl('', Validators.required),
   });
 
-  public commentOnPost(): void {
-     
+  public commentOnPost(post_id:any): void {
+    this.commentForm.controls['post_id'].setValue(post_id);
  
     if (this.commentForm.valid)
       this.commentService
