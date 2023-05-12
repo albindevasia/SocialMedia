@@ -59,7 +59,7 @@ export class ProfilePictureComponent {
     }
   }
   public singleProfile(){
-    this.profileApi.getSingle('David').subscribe(res=>{
+    this.profileApi.getProfile().subscribe(res=>{
    
   // console.log(res)
       

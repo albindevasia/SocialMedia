@@ -35,6 +35,10 @@ const routes: Routes = [
       component:NewPostComponent   
     },
     {
+      path:'accept',
+      component:AcceptComponent
+    },
+    {
       path:':username',
       component:ProfileComponent,
       children:[
@@ -59,10 +63,10 @@ const routes: Routes = [
       
         {
           path:'',
-          redirectTo:'timeline' ,pathMatch:'full'
+          redirectTo:'friends' ,pathMatch:'full'
         },
         {
-          path:'friends/:username',
+          path:'friends',
           component:ProfFriendsComponent
         },
         {
@@ -82,14 +86,13 @@ const routes: Routes = [
         {
           path:'addfriend',
           component:AddfriendsComponent
-        }
+        },
+        
  
       ],
+   
     },
-  {
-    path:'accept',
-    component:AcceptComponent
-  },
+
 
   ]
 }

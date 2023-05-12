@@ -72,7 +72,7 @@ console.log(this.caption)
   //   return new Blob([ab], { type: mimeString });
   // }
   public singleProfile(){
-    this.profileApi.getSingle('David').subscribe((res)=>{
+    this.profileApi.getProfile().subscribe((res)=>{
    
   // console.log(res)
       

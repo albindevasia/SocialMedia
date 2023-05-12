@@ -17,14 +17,14 @@ ngOnInit(){
    this.route.paramMap.subscribe((params)=>{
    this.username=params.get('username')
    this.apiservice.getProfile(this.username).subscribe((profile:any)=>{
-    // console.log(profile)
+    //  console.log(profile)
     this.pvc=profile
    this.postService.getPosts(profile.username).subscribe((resp:any[])=>{
     resp.forEach((post:any)=>{
       post.first_name=profile.first_name;
       post.last_name=profile.last_name;
       post.picture=profile.picture
-      
+      // console.log(resp)
       this.posts.push(post)
     })
    })

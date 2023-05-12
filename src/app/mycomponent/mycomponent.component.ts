@@ -13,7 +13,7 @@ export class MycomponentComponent {
   profile: any;
   constructor(private readonly http:HttpClient,private readonly toastr :ToastrService ,private readonly ProfileApi:ProfileService){}
   public singleProfile(){
-    this.ProfileApi.getSingle('David').subscribe(res=>{
+    this.ProfileApi.getProfile().subscribe(res=>{
      this.profile=res;
      
     })

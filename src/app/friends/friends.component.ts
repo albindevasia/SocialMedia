@@ -23,10 +23,11 @@ export class FriendsComponent {
     this.friendsShow()
   }
    public singleProfile(){
-  this.profileApi.getSingle('David').subscribe(res=>{
-   this.profile=res;
-   this.profile.picture=`https://api-sales-app.josetovar.dev/pictures/`+ res.picture 
-    
+
+  this.profileApi.getProfile().subscribe((res)=>{
+    this.profile=res
+    //  this.profile.picture=`https://api-sales-app.josetovar.dev/pictures/`+ res.picture
+    //  console.log(res)
   })
    }
    public friendsShow(){

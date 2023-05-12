@@ -43,4 +43,7 @@ return this.http.get(`https://api-sales-app.josetovar.dev/friendships/requests`)
   public viewFriends():Observable<any>{
     return this.http.get(`https://api-sales-app.josetovar.dev/friendships/`)
   }
+  public viewS(username:any):Observable<any>{
+    return this.http.get(`https://api-sales-app.josetovar.dev/friendships/`)
+  }
 }
