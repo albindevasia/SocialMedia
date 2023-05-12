@@ -35,7 +35,7 @@ const routes: Routes = [
       component:NewPostComponent   
     },
     {
-      path:'profile/:username',
+      path:':username',
       component:ProfileComponent,
       children:[
 
@@ -59,7 +59,7 @@ const routes: Routes = [
       
         {
           path:'',
-          redirectTo:'myprofile' ,pathMatch:'full'
+          redirectTo:'timeline' ,pathMatch:'full'
         },
         {
           path:'friends/:username',
