@@ -35,6 +35,7 @@ import { AcceptComponent } from './accept/accept.component';
     NavComponent,
       // PostsComponent,
     FriendsComponent,
+    // RegisterComponent,
       // MyfriendsprofileComponent,
       // AcceptComponent,
       // AddfriendsComponent,
