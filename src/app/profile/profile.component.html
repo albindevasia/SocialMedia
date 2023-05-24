@@ -1,37 +1,48 @@
 <section class=" p-4">
-    <div class="bg-gray-200">
-    <div class="flex flex-col items-start border-gray-300 border-2 rounded-md bg-cover bg-coverp" >
-      <!-- <div class="w-full h-40 bg-gray-500">
-            <img src="https://images.unsplash.com/photo-1623627484632-f041d1fb366d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="cover photo " >
-        </div>  -->
+    <div class="bg-gray-100 border-2">
+    <div class="flex flex-col items-start border-gray-300  rounded-md bg-cover " >
+      
+      <div class="w-full h-64 bg-gray-500">
+            <img src="https://images.unsplash.com/photo-1623627484632-f041d1fb366d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="cover photo " class="w-full h-full" >
+            <img   src="{{pvc?.picture}}" class="w-40 mb-1 h-40 object-cover rounded-full overflow-hidden -my-[100px]" >
+            <button class="ml-36 -my-8 " 
+            routerLink="picture">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-6 w-6 "><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M149.1 64.8L138.7 96H64C28.7 96 0 124.7 0 160V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H373.3L362.9 64.8C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
+
+            
+              
+            </button>
+            <h2 class="text-2xl text-gray-300 font-bold  -my-[130px] ml-44" >{{pvc?.first_name + ' ' + pvc?.last_name}}</h2>
+        </div> 
      
-        
+        <!-- <div class="w-40 mb-1 h-40 rounded-full overflow-hidden"> -->
+           
+        <!-- </div> -->
+<!--         
         <div class="  ml-8 mt-28 flex flex-col " >
-            <div class="w-40 mb-1 h-40 rounded-full overflow-hidden">
-            <img   src="{{pvc?.picture}}" class="w-full h-full object-cover" >
-        </div>
+        
             <button class="ml-32 " 
             routerLink="picture">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-6 w-6 fill-white"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M149.1 64.8L138.7 96H64C28.7 96 0 124.7 0 160V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H373.3L362.9 64.8C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-6 w-6 fill-white"><path d="M149.1 64.8L138.7 96H64C28.7 96 0 124.7 0 160V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H373.3L362.9 64.8C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
             
               
             </button>
           
            
-        </div> 
+        </div>  -->
        
             <div class=" float-right ml-56 p-2 ">
                
-                <h2 class="text-2xl text-gray-200 font-bold  ">{{pvc?.first_name + ' ' + pvc?.last_name}}</h2>
+                <!-- <h2 class="text-2xl text-gray-200 font-bold  ">{{pvc?.first_name + ' ' + pvc?.last_name}}</h2> -->
                 
             </div>
       
         </div> 
      
-        <div class="p-2 ">
-        <nav class="p-4 ml-32 align-center">
+        <div class="p-2 mt-12 ml-6">
+        <nav class="p-4 ml-32  align-center">
             <a routerLink="timeline/{{pvc?.username}}" 
-            routerLinkActive="bg-pink-600 text-white transition duration-500 ease-in-out hover:bg-gray-700" class="p-4">Timeline</a>
+            routerLinkActive="bg-pink-600 text-white transition duration-500 ease-in-out hover:bg-gray-700 " class="p-4">Timeline</a>
             <a 
             routerLink="about/{{pvc?.username}}" 
             routerLinkActive="bg-pink-600 text-white transition duration-500 ease-in-out hover:bg-gray-700"

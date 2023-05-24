@@ -8,8 +8,7 @@ const routes: Routes = [
   {
     path:'',
     component:LoginComponent,
-    // canActivate:[LoginGuard],
-    // canActivateChild:[LoginGuard],
+ 
     children:[
       {
       path:'signup',
