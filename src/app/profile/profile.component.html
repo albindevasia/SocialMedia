@@ -42,21 +42,21 @@
         <div class="p-2 mt-12 ml-6">
         <nav class="p-4 ml-32  align-center">
             <a routerLink="timeline/{{pvc?.username}}" 
-            routerLinkActive="bg-pink-600 text-white transition duration-500 ease-in-out hover:bg-gray-700 " class="p-4">Timeline</a>
+            routerLinkActive="text-blue-500  " class="p-4">Timeline</a>
             <a 
             routerLink="about/{{pvc?.username}}" 
-            routerLinkActive="bg-pink-600 text-white transition duration-500 ease-in-out hover:bg-gray-700"
+            routerLinkActive="text-blue-500"
             [routerLinkActiveOptions]="{ exact: true }"
             class="p-4">About</a>
             <a routerLink="friends" 
-            routerLinkActive="bg-pink-600 text-white transition duration-500 ease-in-out hover:bg-gray-700" class="p-4">Friends</a>
+            routerLinkActive="text-blue-500" class="p-4">Friends</a>
             <a 
             routerLink="photos/{{pvc?.username}}" 
-            routerLinkActive="bg-pink-600 text-white transition duration-500 ease-in-out hover:bg-gray-700"
+            routerLinkActive="text-blue-500"
              class="p-4">Photos</a>
              <a 
              routerLink="myprofile" 
-             routerLinkActive="bg-pink-600 text-white transition duration-500 ease-in-out hover:bg-gray-700"
+             routerLinkActive="text-blue-500"
               class="p-4">MyProfile</a>
         </nav>
        
