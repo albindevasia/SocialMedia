@@ -8,6 +8,7 @@ import { AuthInterceptor } from 'src/app/interceptors/token.interceptor';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+  styleUrls:['./login.component.css']
 
 })
 export class LoginComponent {
@@ -46,5 +47,29 @@ public get controls() {
 }
 public create(){
   this.router.navigate(['login/signup'])
+}
+
+isDarkMode = false;
+public toggleDarkMode(event: Event) {
+  const checked = (event.target as HTMLInputElement).checked;
+  this.isDarkMode = checked;
+  this.applyDarkMode();
+  localStorage.setItem('darkMode', this.isDarkMode.toString());
+
+
+
+
+}
+ngOnInit():void{
+  const darkModePreference = localStorage.getItem('darkMode');
+  this.isDarkMode = darkModePreference === 'true';
+   this.applyDarkMode();
+}
+public applyDarkMode(){
+  if (this.isDarkMode) {
+    document.body.classList.add('dark');
+  } else {
+    document.body.classList.remove('dark');
+  }
 }
 }

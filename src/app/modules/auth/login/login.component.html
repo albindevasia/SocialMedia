@@ -1,8 +1,21 @@
-<section  class="flex items-center justify-center h-screen bg-gray-300 overflow-y-scroll" >
+
+
+
+
+
+
+<div [ngClass]="{'dark':isDarkMode}" >
+  
+<section  class=" bg-gray-300 overflow-y-scroll dark:bg-gray-800" >
+  <label class="switch float-right mr-3">
+    <input type="checkbox" [checked]="isDarkMode"  (change)="toggleDarkMode($event)">
+    <span class="slider round"></span>
+  </label>
+  <div class="flex items-center justify-center h-screen ">
   <div class="mr-40">
     <!-- <h1 class="text-[50px] text-blue-500 font-black">Facebook</h1> -->
     <img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2012/08/1000px-Facebook.png?auto=format&q=60&fit=max&w=930" class="w-[250px] ">
-    <p class="text-xl font-mono mt-2">
+    <p class="text-xl font-mono mt-2 dark:text-white">
       Connect with Friends and the world  <br />
       around you on Facebook
     </p>
@@ -70,11 +83,12 @@
       Create New Account
     </button>
   </div>
-
+</div>
 </section>
 <!-- <div *ngIf="signup">
 <app-register ></app-register>
 </div> -->
 <div>
 <router-outlet></router-outlet>
+</div>
 </div>
