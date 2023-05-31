@@ -1,5 +1,5 @@
-<div class="bg-white rounded-2xl mb-6 " *ngFor="let p of posts">
-    <div class="flex justify-between p-2">
+<div class="bg-white rounded-2xl mb-6 dark:bg-gray-600 " *ngFor="let p of posts">
+    <div class="flex justify-between p-2 ">
       <div class="flex items-center p-4">
         <div class="w-12 h-12 rounded-full overflow-hidden ml-3">
           <img
@@ -8,8 +8,8 @@
             class="w-full h-full object-cover"
           />
         </div>
-        <div>
-          <p class="font-bold -mb-1">{{p.first_name + ' '+p.last_name}}</p>
+        <div class="ml-2">
+          <p class="font-bold -mb-1 dark:text-gray-300">{{p.first_name + ' '+p.last_name}}</p>
           <p class="text-gray-400">{{p.post.created_at | date}} </p>
         </div>
       </div>
@@ -28,14 +28,14 @@
       </svg>
     </div>
     <div
-      class="max-h-96 overflow-hidden p-2 border-2 border-b-gray-400 rounded-xl"
+      class="max-h-96 overflow-hidden p-2 border-2 border-b-gray-400 rounded-xl dark:bg-slate-200"
     >
       <img
         src="https://api-sales-app.josetovar.dev/pictures/{{p.post.picture}}"
       />
     </div>
     <div class="p-4">
-      <p>
+      <p class="dark:text-white">
        {{p.post.content}}
       </p>
     </div>

@@ -1,19 +1,19 @@
-<div class=" bg-slate-50 border-black px-2 py-2 rounded-md">
+<div class=" bg-slate-50 border-black px-2 py-2 rounded-md dark:bg-gray-700">
     <div class="border-b-2 border-gray-500 px-2 py-2 flex justify-between"  >
-        <h2 class="text-xl font-bold">Friend Requests</h2>
+        <h2 class="text-xl font-bold dark:text-gray-200">Friend Requests</h2>
        <svg routerLink="../addfriend" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-7 h-7"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
         
 
     </div>
     <div class="grid grid-cols-2 gap-3 p-4" >
-        <div class="border-2 border-gray-300 rounded-lg px-4 py-4" *ngFor="let re of request" >
-        <div class="flex align-baseline items-center   ">
+        <div class="border-2 border-gray-300 rounded-lg px-4 py-4 dark:bg-gray-500 " *ngFor="let re of request" >
+        <div class="flex align-baseline items-center  ">
             <div class="w-16 h-16 overflow-hidden rounded-full">
                 <img src="https://api-sales-app.josetovar.dev/pictures/{{re.sender.picture}}" class="w-full h-full object-cover">
             </div>
             <div class="p-2">
                 <h3 class="font-bold text-xl">{{re.sender.first_name + ' ' + re.sender.last_name}}</h3>
-                <p class="text-gray-500">15 mutual friends</p>
+                <p class="text-gray-500 dark:text-gray-100">15 mutual friends</p>
             </div>
         </div>
         <div class="p-3">

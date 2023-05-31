@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+// import { DarkThemeService } from 'src/app/Services/dark.service';
 import { AuthInterceptor } from 'src/app/interceptors/token.interceptor';
 
 @Component({
@@ -13,7 +14,8 @@ import { AuthInterceptor } from 'src/app/interceptors/token.interceptor';
 })
 export class LoginComponent {
 
-  constructor(private readonly router:Router,private readonly http:HttpClient,private readonly toastr:ToastrService){}
+  constructor(private readonly router:Router,private readonly http:HttpClient,private readonly toastr:ToastrService,
+ ){}
 
   public loginForm=new FormGroup({
     email:new FormControl('',Validators.required),
@@ -61,8 +63,8 @@ public toggleDarkMode(event: Event) {
 
 }
 ngOnInit():void{
-  const darkModePreference = localStorage.getItem('darkMode');
-  this.isDarkMode = darkModePreference === 'true';
+   const darkModePreference = localStorage.getItem('darkMode');
+   this.isDarkMode = darkModePreference === 'true';
    this.applyDarkMode();
 }
 public applyDarkMode(){
@@ -72,4 +74,18 @@ public applyDarkMode(){
     document.body.classList.remove('dark');
   }
 }
+
+
+
+  // setDarkTheme() {
+  //   // Logic to determine if the dark theme is selected
+  //   const isDarkThemeSelected = true;
+
+  //   // Save the user's preference in localStorage
+  //   localStorage.setItem('darkTheme', isDarkThemeSelected.toString());
+
+  //   // Emit the dark theme state change using the service
+  //   this.darkThemeService.setDarkTheme(isDarkThemeSelected);
+  // }
 }
+
