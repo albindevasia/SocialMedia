@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Injectable } from '@angular/core';
+import { Component, Inject, Injectable, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { NewDarkService } from 'src/app/Services/newDark.service';
 // import { DarkThemeService } from 'src/app/Services/dark.service';
 import { AuthInterceptor } from 'src/app/interceptors/token.interceptor';
 
@@ -14,8 +15,10 @@ import { AuthInterceptor } from 'src/app/interceptors/token.interceptor';
 })
 export class LoginComponent {
 
-  constructor(private readonly router:Router,private readonly http:HttpClient,private readonly toastr:ToastrService,
- ){}
+  constructor(private readonly router:Router,private readonly http:HttpClient,private readonly toastr:ToastrService,@Inject(NewDarkService)private readonly darkService:NewDarkService
+ ){
+  this.isDarkMode=this.darkService.darkModeEnabled;
+ }
 
   public loginForm=new FormGroup({
     email:new FormControl('',Validators.required),
@@ -52,40 +55,34 @@ public create(){
 }
 
 isDarkMode = false;
-public toggleDarkMode(event: Event) {
+// public toggleDarkMode(event: Event) {
+//   const checked = (event.target as HTMLInputElement).checked;
+//   this.isDarkMode = checked;
+//   this.applyDarkMode();
+//   localStorage.setItem('darkMode', this.isDarkMode.toString());
+
+
+
+
+
+// ngOnInit():void{
+//    const darkModePreference = localStorage.getItem('darkMode');
+//    this.isDarkMode = darkModePreference === 'true';
+//    this.applyDarkMode();
+// }
+// public applyDarkMode(){
+//   if (this.isDarkMode) {
+//     document.body.classList.add('dark');
+//   } else {
+//     document.body.classList.remove('dark');
+//   }
+// }
+
+public toggleTheme(event:Event){
   const checked = (event.target as HTMLInputElement).checked;
-  this.isDarkMode = checked;
-  this.applyDarkMode();
-  localStorage.setItem('darkMode', this.isDarkMode.toString());
-
-
-
-
-}
-ngOnInit():void{
-   const darkModePreference = localStorage.getItem('darkMode');
-   this.isDarkMode = darkModePreference === 'true';
-   this.applyDarkMode();
-}
-public applyDarkMode(){
-  if (this.isDarkMode) {
-    document.body.classList.add('dark');
-  } else {
-    document.body.classList.remove('dark');
-  }
+    this.isDarkMode = checked;
+  this.darkService.toggleDarkMode();
 }
 
-
-
-  // setDarkTheme() {
-  //   // Logic to determine if the dark theme is selected
-  //   const isDarkThemeSelected = true;
-
-  //   // Save the user's preference in localStorage
-  //   localStorage.setItem('darkTheme', isDarkThemeSelected.toString());
-
-  //   // Emit the dark theme state change using the service
-  //   this.darkThemeService.setDarkTheme(isDarkThemeSelected);
-  // }
 }
 

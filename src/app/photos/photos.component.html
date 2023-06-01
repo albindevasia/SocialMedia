@@ -2,7 +2,7 @@
 <div class="bg-white rounded-2xl mb-6" *ngFor="let pro of profile">
   
     <div
-      class="max-h-96   overflow-hidden p-2 border-2 border-b-gray-400 rounded-xl"
+      class="max-h-96   overflow-hidden p-2 border-2 border-b-gray-400 rounded-xl dark:border-gray-200"
     >
       <img (click)="showFullScreen(pro.post.picture)"
       src="https://api-sales-app.josetovar.dev/pictures/{{pro.post.picture}}" class="h-60 l w-full object-cover"
