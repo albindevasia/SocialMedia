@@ -22,7 +22,7 @@ export class AppComponent implements OnInit{
   //     document.body.classList.remove('dark');
   //   }
   // }
-  ngOnInit():void{
+ngOnInit():void{
 this.isDarkMode=this.darkService.darkModeEnabled;
 this.darkService.isDarkTheme$.subscribe((isDarkTheme)=>{
   this.isDarkMode=isDarkTheme;
