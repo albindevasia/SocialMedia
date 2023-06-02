@@ -19,6 +19,7 @@ export class NewDarkService{
     }
   
  }   
+
  private updateDarkMode(enabled:boolean):void{
         if(enabled){
             document.body.classList.add('dark');
